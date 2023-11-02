@@ -1,0 +1,515 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block links %}
+
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'main/script/courseHome.css' %}">
+    
+
+{% endblock %}
+
+
+
+
+<body class="w3-black">
+    <div class="w3-container" style="height: 100px; width: 100%;padding:0;margin-bottom:10px;">
+      <div class="Header">
+        <div class="left">
+          <a href="new.html"
+            ><i
+              class="fa fa-home home"
+              style="color: rgba(0, 0, 0, 0.556); font-size: 20px"
+            ></i
+          ></a>
+        </div>
+        <div class="mid"></div>
+        <div class="right"><a href="contact.html">Calender</a></div>
+        <div class="right"><a href="about.html">Courses</a></div>
+        <div class="right">
+          <a href="gallery.html" target="_self">Contact</a>
+        </div>
+        <div class="right"><a href="calender.html">Calender</a></div>
+      </div>
+    </div>
+    <div class="w3-row">
+        <div class="w3-container w3-col w3-border-white" style="width: 65%; height: 600px;border: 2px dotted; padding:0;margin-right:15px;">
+            <div class="w3-bar w3-black" style="border-bottom: 2px white dotted;">
+              <a class="w3-bar-item w3-button" id="classes" style="border-right: 2px white dotted;background-color:grey;" onclick="classes()">Classes</a>
+              <a class="w3-bar-item w3-button" id="classmaterials" style="border-right: 2px white dotted;" onclick="classmaterials()">Class Materials</a>
+              <a class="w3-bar-item w3-button" id="grade" style="border-right: 2px white dotted;" onclick="grade()">Grade</a>
+              
+            </div>
+            <div class="w3-container classess" style="width:995px; height:558px;padding: 0;display:block;">
+              <div class="w3-display-container" style="height:100px;padding:0;">
+                <h1 class="w3-display-topmiddle" style="align-items: center;">HII</h1>
+                <div class="w3-display-bottomleft" style="margin-left:10px;">
+                <span>Prof Name:</span><span style="font-size: smaller;color:grey;">Bulusu</span>
+                </div>
+              <div class="w3-button w3-border-white w3-round-xxlarge w3-display-topright" style="float: right;margin-top:30px;border:2px white solid;margin-right:10px;" onclick="openFormPopUps()">Add</div>
+              </div>
+                <hr style="border: 2px white dotted;">
+                <div class="w3-container" style="max-width: 1000px; height:350px;padding:0;padding-right:-40px;">
+                  
+                  <div class="container">
+                    <div class="slider-container">
+                    <div class="slider-wrapper">
+                      <button id="prev-slide" class="slide-button material-symbols-rounded">
+                        chevron_left
+                      </button>
+                      <div class="image-list">
+                        <a class="image-item  w3-card-4 w3-round-large w3-border-dotted" href="Hi.html" style="text-decoration:none;border:2px white solid;">
+                        <div class=" w3-round-large w3-container" style="height:70%;background-image:url(abstract-classic-blue-screensaver_23-2148421853.avif);">
+                        <p style="font-size:40px;margin-left:45px;margin-top:70px;">ECN-203</p>
+                        </div>
+                        <div class="w3-display-container"  style="height:30%;">
+                          <p style="font-size:13px;margin: 0;padding: 0;border: 0;padding-top:20px;padding-left:8px;">Date:<span>23/11/2023</span></p>
+                          <p class="w3-display-topright" style="font-size:13px;margin: 0;padding: 0;border: 0;padding-top:20px;padding-left:8px;float:right;padding-right:6px;">Start Time:<span><b>4:00 am</b></span></p>
+                          <p style="font-size:13px;margin: 0;padding: 0;border: 0;padding-top:10px;padding-left:8px;">Day:<span>Wednesday</span></p>
+                          <p class="w3-display-right" style="font-size:13px;margin: 0;padding: 0;border: 0;padding-top:29px;padding-left:8px;float:right;padding-right:6px;">Close Time:<span><b>4:30 am</b></span></p>
+                          <p ></p>
+                          <!-- <p style="font-size:40px;">ECN-203</p> -->
+                        </div>
+                        </a>
+                        <img class="image-item" src="download.jpeg" alt="img-2" />
+                        <img class="image-item" src="download.jpeg" alt="img-3" />
+                        <img class="image-item" src="download.jpeg" alt="img-4" />
+                        <img class="image-item" src="download.jpeg" alt="img-5" />
+                        <img class="image-item" src="download.jpeg" alt="img-6" />
+                        <img class="image-item" src="download.jpeg" alt="img-7" />
+                        <img class="image-item" src="download.jpeg" alt="img-8" />
+                        <img class="image-item" src="download.jpeg" alt ="img-9" />
+                        <img class="image-item" src="download.jpeg" alt="img-10" />
+                      </div>
+                      <button id="next-slide" class="slide-button material-symbols-rounded">
+                        chevron_right
+                      </button>
+                    </div>
+                    <div class="slider-scrollbar">
+                      <div class="scrollbar-track">
+                        <div class="scrollbar-thumb"></div>
+                      </div>
+                    </div>
+                  
+                  </div>
+                  </div>
+              </div>
+                <hr style="border: 2px white dotted;">
+            </div>
+            
+
+        <div class="assignment classmaterialss" style="display:none;">
+          <div class="table" style="border-radius: 0;">
+              <section class="table__header">
+                  <h1>Files</h1>
+                  <div class="input-group" style="margin-right:50px;">
+                      <input type="search" placeholder="Search Data...">
+                      <img src="imgs/search.png" alt="">
+                  </div>
+                  <button class="w3-display-topright w3-xlarge circular-button w3-hover-border-white" onclick="PopUp()" style="right:15px; position: fixed;top:12px;border-radius:50%;border:2px black transparent;color: var(--primary-clr);background-color:transparent;cursor: pointer;width:40px;height:40px;">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                   
+              </section>
+              <section class="table__body">
+                  <table>
+                      <thead>
+                          <tr>
+                              <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                              <th> Files<span class="icon-arrow">&UpArrow;</span></th>
+                              <th> Uploaded By <span class="icon-arrow">&UpArrow;</span></th>
+                              <th style="width: 140px;"> Uploaded Date</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        {% for reso in res %}
+                          <tr>
+                              <td> {{ forloop.counter }} </td>
+                              <td>  <p style="position: relative; width: 300px; height: 30px; cursor: pointer;" onclick="openPdfPopup('Physics project 1.pdf', 1)">{{reso.name}} </p></td>
+                              <td> <img src="imgs/male.png" alt="">{{course.teacher.first_name}}</td>
+                              <td> {{reso.created}} </td>
+                          </tr>
+                         {% endfor %}
+                      </tbody>
+                  </table>
+                  <div id="pdfModal" class="modal">
+                      <div class="modal-content">
+                          <span class="close" onclick="closePdfPopup()">&times;</span>
+                          <iframe id="pdfIframe" src="" style="width: 100%; height: 100vh; border: none;"></iframe>
+                      </div>
+                  </div>
+              </section>
+            </div>
+      </div>
+      <div class="assignment gradess" style="display:none;">
+        <div class="table" style="border-radius:0;" >
+            <section class="table__header">
+                <h1>Grade Assignment</h1>
+                <div class="input-group">
+                    <input type="search" placeholder="Search Data...">
+                    <img src="imgs/search.png" alt="">
+                </div>
+            </section>
+            <section class="table__body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Enrollment <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Name <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Status</th>
+                            <th> Marks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> 1 </td><td>22114089</td>
+                            <td> <img src="imgs/male.png" alt="">Zinzu Chan Lee</td>
+                            <td>
+                                <p class="1C status pending">Pending</p>
+                            </td>
+                            <td><p class="1A"><input class="1" type="text" name="marks" style="height: 30px; width: 40px;">/10 <img class="1B" src="imgs/tick.png" style="cursor: pointer;" onclick="save(1)"></p></td>
+                        </tr>
+                        <tr>
+                            <td> 2 </td><td>22114089</td>
+                            <td><img src="imgs/male.png" alt=""> Jeet Saru </td>
+                            <td>
+                                <p class="2C status pending">Pending</p>
+                            </td>
+                            <td><p class="2A"><input class="2" type="text" name="marks" style="height: 30px; width: 40px;">/10 <img class="2B" src="imgs/tick.png" style="cursor: pointer;" onclick="save(2)"></p> </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td><td>22114089</td>
+                            <td><img src="imgs/male.png" alt=""> Sonal Gharti </td>
+                            <td>
+                                <p class="3C status pending">Pending</p>
+                            </td>
+                            <td><p class="3A"><input class="3" type="text" name="marks" style="height: 30px; width: 40px;">/10 <img class="3B" src="imgs/tick.png" style="cursor: pointer;" onclick="save(3)"></p></td>
+                        </tr>
+                        <tr>
+                            <td> 4</td><td>22114089</td>
+                            <td><img src="imgs/male.png" alt=""> Alson GC </td>
+                            <td>
+                                <p class="4C status pending">Pending</p>
+                            </td>
+                            <td><p class="4A"><input class="4" type="text" name="marks" style="height: 30px; width: 40px;">/10 <img class="4B" src="imgs/tick.png" style="cursor: pointer;"onclick="save(4)"></p></td>
+                        </tr>
+                        <tr>
+                            <td> 5</td><td>22114089</td>
+                            <td><img src="imgs/male.png" alt=""> Sarita Limbu </td>
+                            <td>
+                                <p class="5C status pending">Pending</p>
+                            </td>
+                            <td><p class="5A"><input class="5" type="text" name="marks" style="height: 30px; width: 40px;">/10 <img class="5B" src="imgs/tick.png" style="cursor: pointer;" onclick="save(5)"></p> </td>
+                        </tr>
+                        <tr>
+                            <td> 6</td><td>22114089</td>
+                            <td><img src="imgs/male.png" alt=""> Alex Gonley </td>
+                            <td>
+                                <p class="6C status pending">Pending</p>
+                            </td>
+                            <td><p class="6A"><input class="6" type="text" name="marks" style="height: 30px; width: 40px;">/10 <img class="6B" src="imgs/tick.png" style="cursor: pointer;" onclick="save(6)"></p> </td>
+                        </tr>
+                        <tr>
+                            <td> 7</td><td>22114089</td>
+                            <td><img src="imgs/male.png" alt=""> Jeet Saru </td>
+                            <td>
+                                <p class="7C status pending">Pending</p>
+                            </td>
+                            <td><p class="7A"><input class="7" type="text" name="marks" style="height: 30px; width: 40px;">/10 <img class="7B" src="imgs/tick.png" style="cursor: pointer;" onclick="save(7)"></p> </td>
+                        </tr>
+                        <tr>
+                            <td> 8</td><td>22114089</td>
+                            <td><img src="imgs/male.png" alt=""> Aayat Ali Khan </td>
+                            <td>
+                                <p class="8C status pending">Pending</p>
+                            </td>
+                            <td> <p class="8A"><input class="8" type="text" name="marks" style="height: 30px; width: 40px;">/10 <img class="8B" src="imgs/tick.png" style="cursor: pointer;" onclick="save(8)"></p> </td>
+                        </tr>
+                        <tr>
+                            <td> 9</td><td>22114089</td>
+                            <td><img src="imgs/male.png" alt=""> Alson GC </td>
+                            <td>
+                                <p class="9C status pending">Pending</p>
+                            </td>
+                            <td> <p class="9A"><input class="9" type="text" name="marks" style="height: 30px; width: 40px;">/10 <img class="9B" src="imgs/tick.png" style="cursor: pointer;" onclick="save(9)"></p> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    </div>
+    
+      
+        <div class="w3-container w3-border-white w3-col" style="width: 34%; height: 600px; padding: 0; border: 2px dotted;">
+            <div class="w3-bar w3-black" style="border-bottom: 2px white dotted;">
+                <a class="w3-bar-item w3-button" id="Announcement" style="border-right: 2px white dotted;background-color:grey;" onclick="Announcement()">Announcement</a>
+                <a class="w3-bar-item w3-button" id="Assignment" style="border-right: 2px white dotted;" onclick="Assignment()">Assignment</a>
+            </div>
+            
+            <div class="w3-display-container Announcements" style="width:100%;height:558px;padding-top:20px;overflow-y:scroll;padding-left:10px;">
+                <div class="Announcements-container">
+                    <div class="Announcements">
+                      {% for Announcement in Announcements %}
+                      <div class="Announcement">
+                        <div class="Announcement__header">
+                              <div class="avatar avatar--small">
+                                  <!-- <img src="{{Announcement.user.avatar.url}}" /> -->
+                              </div>
+                              <!-- <span>By : {{Announcement.user.username}}</span> -->
+                          </a>
+                          <div class="Announcement__actions">
+                              <!-- <span>{{Announcement.created|timesince}} ago</span> -->
+                          </div>
+                          </div>
+                         <div class="Announcement__content" style="margin-top: 45px;">
+                           <b>{{Announcement.description|slice:":100"}}</b><a href="announcement.html"><b id="showmore">..showmore</b></a>
+                          </div>
+                        </div>
+              {% endfor %}  
+              <div class="add-event-wrapper">
+                <div class="add-event-header">
+                  <div class="title w3-center" style="text-align: center;"><pre>Add Event</pre></div>
+                  <i class="fas fa-times close"></i>
+                </div>
+                <div class="add-event-body">
+                  <div class="add-event-input">
+                    <input type="text" placeholder="Title" class="event-name" />
+                  </div>
+                  <div class="add-event-input">
+                    <input
+                      type="text"
+                      placeholder="Description"
+                      class="event-time-from"
+                    />
+                  </div>
+                  <div>
+                    <label for="images" class="drop-container" id="dropcontainer">
+                      <span class="drop-title">Drop files here</span>
+                      or
+                      <input type="file" id="fileInput"  multiple>
+                    </label>
+                  </div>
+                </div>
+                <div class="add-event-footer">
+                  <button class="add-event-btn">Add Event</button>
+                </div>
+              </div>
+              <button class="add-event w3-display-bottomright">
+                <i class="fas fa-plus"></i>
+                </button>
+              
+              </div>
+              </div>
+            </div>
+            <div class="w3-container Assignments" style="width:100%;height:527px;margin-top:30px;display:none;padding:0;">
+              <div class="w3-button w3-border-white w3-round-xxlarge " id="PastDue" style="width:45%; border: 2px dotted; text-align: center;background-color:grey;margin-left:12px;" onclick="PastDue()">Past Due</div>
+              <div class="w3-button w3-border-white w3-round-xxlarge" id="Completed" style="width:45%; border: 2px dotted; text-align: center;margin-left:25px;" onclick="Completed()">Completed</div>
+              
+              <hr style="border:0.2px grey solid;">
+              
+              <div class="w3-container PastDues" style="margin-bottom:15px;height:440px;overflow-y:scroll;padding-left:15px;">
+                  <strong>25 Sept</strong><span style="margin-left:10px;font-size: small;">Monday</span>
+                  <a href="assgnview.html">
+                  <div class="w3-container w3-round-large w3-border" style="height:125px;width:100%;margin-top:15px;padding:0;border-color: grey;margin-bottom:15px;">
+                      <div class="w3-row" >
+                          <div class="w3-col w3-container" style="width:20%;height:auto;">
+                              <img src="Screenshot 2023-10-17 183724.png" width="50px" height="50px" style="border-radius:20%;margin-top:15px;">
+                          </div>
+                          <div class="w3-col" style="width:70%;height:125px;margin-left:-18px;padding-top:0px;margin-right:10px;">
+                          <p>Assignment-2 (Fourier series of periodic signals)</p>
+                          <p style="font-size: smaller;margin-top: -10px;color: grey;">Marks available: 100 points</p>
+                          <p style="font-size: small;margin-top:-5px;color: grey;">ECN-203: Signals and Systems</p>
+                          </div>
+                          <div class="w3-col" style="height:125px; width:10%;">
+                          <div class="w3-container w3-green w3-center" style="height:30px;width:30px;margin-top:15px;"></div>
+                          </div>
+                      </div>
+                  </div>
+                  </a>
+                  <strong>25 Sept</strong><span style="margin-left:10px;font-size: small;">Monday</span>
+                  <a href="assgnview.html">
+                  <div class="w3-container w3-round-large w3-border" style="height:125px;width:100%;margin-top:15px;padding:0;border-color: grey;margin-bottom:15px;">
+                      <div class="w3-row" >
+                          <div class="w3-col w3-container" style="width:20%;height:auto;">
+                              <img src="Screenshot 2023-10-17 183724.png" width="50px" height="50px" style="border-radius:20%;margin-top:15px;">
+                          </div>
+                          <div class="w3-col" style="width:70%;height:125px;margin-left:-18px;padding-top:0px;margin-right:10px;">
+                          <p>Assignment-2 (Fourier series of periodic signals)</p>
+                          <p style="font-size: smaller;margin-top: -10px;color: grey;">Marks available: 100 points</p>
+                          <p style="font-size: small;margin-top:-5px;color: grey;">ECN-203: Signals and Systems</p>
+                          </div>
+                          <div class="w3-col" style="height:125px; width:10%;">
+                          <div class="w3-container w3-green w3-center" style="height:30px;width:30px;margin-top:15px;"></div>
+                          </div>
+                      </div>
+                  </div>
+                  </a>
+                  <strong>25 Sept</strong><span style="margin-left:10px;font-size: small;">Monday</span>
+                  <a href="assgnview.html">
+                    <div class="w3-container w3-round-large w3-border" style="height:125px;width:100%;margin-top:15px;padding:0;border-color: grey;margin-bottom:15px;">
+                        <div class="w3-row" >
+                            <div class="w3-col w3-container" style="width:20%;height:auto;">
+                                <img src="Screenshot 2023-10-17 183724.png" width="50px" height="50px" style="border-radius:20%;margin-top:15px;">
+                            </div>
+                            <div class="w3-col" style="width:70%;height:125px;margin-left:-18px;padding-top:0px;margin-right:10px;">
+                            <p>Assignment-2 (Fourier series of periodic signals)</p>
+                            <p style="font-size: smaller;margin-top: -10px;color: grey;">Marks available: 100 points</p>
+                            <p style="font-size: small;margin-top:-5px;color: grey;">ECN-203: Signals and Systems</p>
+                            </div>
+                            <div class="w3-col" style="height:125px; width:10%;">
+                            <div class="w3-container w3-green w3-center" style="height:30px;width:30px;margin-top:15px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                    <button class="w3-display-bottomright w3-xlarge circular-button w3-hover-border-white" onclick="openFormPopUp()" style="bottom:50px;right:50px;position: fixed; position: fixed;border-radius:50%;border:2px black transparent;color: var(--primary-clr);background-color:transparent;cursor: pointer;width:40px;height:40px;">
+                      <i class="fas fa-plus"></i>
+                      </button>
+                    
+              </div>
+              <div class="w3-container Completeds" style="margin-bottom:15px;height:440px;overflow-y:scroll;padding-left:15px;">
+                <strong>25 Sept</strong><span style="margin-left:10px;font-size: small;">Monday</span>
+                <a href="assgn1.html">
+                <div class="w3-container w3-round-large w3-border" style="height:125px;width:100%;margin-top:15px;padding:0;border-color: grey;margin-bottom:15px;">
+                    <div class="w3-row" >
+                        <div class="w3-col w3-container" style="width:20%;height:auto;">
+                            <img src="Screenshot 2023-10-17 183724.png" width="50px" height="50px" style="border-radius:20%;margin-top:15px;">
+                        </div>
+                        <div class="w3-col" style="width:70%;height:125px;margin-left:-18px;padding-top:0px;margin-right:10px;">
+                        <p>Assignment-2 (Fourier series of periodic signals)</p>
+                        <p style="font-size: smaller;margin-top: -10px;color: grey;">Marks awarded: 100 points</p>
+                        <p style="font-size: small;margin-top:-5px;color: grey;">ECN-203: Signals and Systems</p>
+                        </div>
+                        <div class="w3-col" style="height:125px; width:10%;">
+                        <div class="w3-container w3-green w3-center" style="height:30px;width:30px;margin-top:15px;"></div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                <strong>25 Sept</strong><span style="margin-left:10px;font-size: small;">Monday</span>
+                <a href="assgn1.html">
+                <div class="w3-container w3-round-large w3-border" style="height:125px;width:100%;margin-top:15px;padding:0;border-color: grey;margin-bottom:15px;">
+                    <div class="w3-row" >
+                        <div class="w3-col w3-container" style="width:20%;height:auto;">
+                            <img src="Screenshot 2023-10-17 183724.png" width="50px" height="50px" style="border-radius:20%;margin-top:15px;">
+                        </div>
+                        <div class="w3-col" style="width:70%;height:125px;margin-left:-18px;padding-top:0px;margin-right:10px;">
+                        <p>Assignment-2 (Fourier series of periodic signals)</p>
+                        <p style="font-size: smaller;margin-top: -10px;color: grey;">Marks awarded: 100 points</p>
+                        <p style="font-size: small;margin-top:-5px;color: grey;">ECN-203: Signals and Systems</p>
+                        </div>
+                        <div class="w3-col" style="height:125px; width:10%;">
+                        <div class="w3-container w3-green w3-center" style="height:30px;width:30px;margin-top:15px;"></div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                <strong>25 Sept</strong><span style="margin-left:10px;font-size: small;">Monday</span>
+                <a href="assgn1.html">
+                  <div class="w3-container w3-round-large w3-border" style="height:125px;width:100%;margin-top:15px;padding:0;border-color: grey;margin-bottom:15px;">
+                      <div class="w3-row" >
+                          <div class="w3-col w3-container" style="width:20%;height:auto;">
+                              <img src="Screenshot 2023-10-17 183724.png" width="50px" height="50px" style="border-radius:20%;margin-top:15px;">
+                          </div>
+                          <div class="w3-col" style="width:70%;height:125px;margin-left:-18px;padding-top:0px;margin-right:10px;">
+                          <p>Assignment-2 (Fourier series of periodic signals)</p>
+                          <p style="font-size: smaller;margin-top: -10px;color: grey;">Marks awarded: 100 points</p>
+                          <p style="font-size: small;margin-top:-5px;color: grey;">ECN-203: Signals and Systems</p>
+                          </div>
+                          <div class="w3-col" style="height:125px; width:10%;">
+                          <div class="w3-container w3-green w3-center" style="height:30px;width:30px;margin-top:15px;"></div>
+                          </div>
+                      </div>
+                  </div>
+                  </a>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div id="formPopup"  style="display: none; position: fixed; top: 0; left: 0; width:100%; height:100%; background: rgba(0, 0, 0, 0.5); z-index: 4;">
+      <div class="w3-display-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; height: 500px; width: 600px; border-radius: 10px; overflow-y:scroll;">
+          <button onclick="closeFormPopup()" id="closeFormButton" style="float: right;"><i class="fa fa-close" style="border-radius: 100%; cursor: pointer; color: rgb(0, 0, 0);"></i></button>
+          <h1 style="text-align: center; font-size: 45px; margin-bottom: 20px;color:black;">Add Assignment</h1>
+          <hr style="border: 0.05px dashed grey;">
+          <form>
+              <label style="font-size: 20px; display: block; margin-bottom: 10px;color:black;">Assignment Name:</label>
+              <input id="AssignmentName" class="w3-border-black w3-round-xlarge" required placeholder="(e.g.,(Assignment-2(Assignment Name)))" style="width: 100%; border: 2px solid black; height: 40px; margin-bottom: 10px;">
+              <label style="font-size: 20px; display: block; margin-bottom: 10px;color: black;">Marks Available:</label>
+              <input id="Marks" class="w3-border-black w3-round-xlarge" required placeholder="Enter the total marks here(in numbers only)" style="width: 100%; border: 2px solid black; height: 40px; margin-bottom: 10px;">
+              <label style="font-size: 20px; display: block; margin-bottom: 10px;color:black;">Close Time And Date:</label>
+              <div style="margin-top: 10px;">
+                <form>
+                    <input class="w3-border-black w3-border-xxlarge" type="datetime-local" placeholder="Select DateTime" style="width: 100%; border: 2px solid black; height: 40px; margin-bottom: 10px;">
+                </form>
+              </div>
+              <div class="w3-center">
+              <label style="font-size:smaller; display: block; margin-bottom: 10px;color:grey;">Attach Assignment here</label>
+              </div>
+              <label for="images" class="drop-container" id="dropcontainer">
+                <span class="drop-title">Drop files here</span>
+                or
+                <input type="file" id="fileInput"  multiple>
+              </label>
+              <div class="w3-center">
+              <button type="submit" class="w3-button w3-border-black w3-round-xxlarge" style="border: 2px black solid;color:black;margin-top:20px;align-items: center;">Create Assignment</button>
+              </div>
+            </form>
+      </div>
+    </div>
+    
+    <div id="formPopups"  style="display: none; position: fixed; top: 0; left: 0; width:100%; height:100%; background: rgba(0, 0, 0, 0.5); z-index: 4;">
+      <div class="w3-display-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; height: auto; width: 600px; border-radius: 10px; overflow-y:scroll;">
+          <button onclick="closeFormPopups()" id="closeFormButtons" style="float: right;"><i class="fa fa-close" style="border-radius: 100%; cursor: pointer; color: rgb(0, 0, 0);"></i></button>
+          <h1 style="text-align: center; font-size: 45px; margin-bottom: 20px;color:black;">Add Class</h1>
+          <hr style="border: 0.05px dashed black;">
+          <form>
+            <label style="font-size: 20px; display: block; margin-bottom: 10px;color:black;">Start Time And Date:</label>
+              <div style="margin-top: 10px;">
+                <form>
+                    <input class="w3-border-black w3-border-xxlarge" type="datetime-local" placeholder="Select DateTime" style="width: 100%; border: 2px solid black; height: 40px; margin-bottom: 10px;">
+                </form>
+              </div>
+              <label style="font-size: 20px; display: block; margin-bottom: 10px;color:black;">Close Time And Date:</label>
+              <div style="margin-top: 10px;">
+                <form>
+                    <input class="w3-border-black w3-border-xxlarge" type="datetime-local" placeholder="Select DateTime" style="width: 100%; border: 2px solid black; height: 40px; margin-bottom: 10px;">
+                </form>
+              </div>
+              <div class="w3-center">
+              <button type="submit" class="w3-button w3-border-black w3-round-xxlarge" style="border: 2px black solid;color:black;margin-top:20px;align-items: center;">Create Class</button>
+              </div>
+            </form>
+      </div>
+    </div>
+
+    <div id="formPopupss"  style="display: none; position: fixed; top: 0; left: 0; width:100%; height:100%; background: rgba(0, 0, 0, 0.5); z-index: 4;">
+      <div class="w3-display-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; height: 500px; width: 600px; border-radius: 10px; overflow-y:scroll;">
+          <button onclick="closeFormPopupss()" id="closeFormButtonss" style="float: right;"><i class="fa fa-close" style="border-radius: 100%; cursor: pointer; color: rgb(0, 0, 0);"></i></button>
+          <h1 style="text-align: center; font-size: 45px; margin-bottom: 20px;color:black;">Add ClassMaterial</h1>
+          <hr style="border: 0.05px dashed grey;">
+          <form>
+              <label style="font-size: 20px; display: block; margin-bottom: 10px;color:black;">Topic Name:</label>
+              <input id="TopicName" class="w3-border-black w3-round-xlarge" required placeholder="Enter the Topic here" style="width: 100%; border: 2px solid black; height: 40px; margin-bottom: 10px;">
+              <label class="w3-center" style="font-size:smaller; display: block; margin-bottom: 10px;color:grey;">Attach the file here</label>
+              <label for="images" class="drop-container" id="dropcontainer">
+                <span class="drop-title">Drop files here</span>
+                or
+                <input type="file" id="fileInput"  multiple>
+              </label>
+              <div class="w3-center">
+                <button type="submit" class="w3-button w3-border-black w3-round-xxlarge" style="border: 2px black solid;color:black;margin-top:20px;align-items: center;">Add ClassMaterial</button>
+                </div>
+            </div>
+            </form>
+      </div>
+    </div> 
+
+
+
+ <script src="{% static 'main/script/courseHome.js' %}"></script> 
+
+</body>

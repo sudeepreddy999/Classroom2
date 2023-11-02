@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block links %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'main/styles/announce.css' %}">
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="Header">
+        <div class="left">
+          <a href="{% url 'home' %}"
+            ><i
+              class="fa fa-home home"
+              style="color: rgba(0, 0, 0, 0.556); font-size: 20px"
+            ></i
+          ></a>
+        </div>
+        <div class="mid"></div>
+        <div class="right"><a href="contact.html">Calender</a></div>
+        <div class="right"><a href="about.html">Courses</a></div>
+        <div class="right">
+          <a href="gallery.html" target="_self">Contact</a>
+        </div>
+        <div class="right"><a href="calender.html">Calender</a></div>
+      </div>
+
+          <div class="Announcement">
+            <div class="leftSide"><a class="prev" id="next" href="">❮</a></div>
+            <div class="body">
+                <span class="pull-left"><span class="date"><span>{{date}}</span> <small>{{month}}</small></span></span>
+                <span class="pull-mid"><span class="title"><div class="titlediv">{{Announcement.title}}</div></span></span>
+                <div class="content">
+                    <b id="ids">{{Announcement.id}}</b>
+                    <b id="maxi">{{max}}</b>
+                  <h3>{{Announcement.body}}</h3>
+                    <div>
+                        {% for file in Announcement.files.all %}
+                        <a href="{{ file.file.url }}" download>Download </a><br>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="rightSide"><a class="next" id="prev" href="" >❯</a></div>
+          </div>
+    </div>
+{% endblock body %}
+
+{% block js %}
+<script src="{% static 'main/script/announce.js' %}"></script>
+{% endblock %}

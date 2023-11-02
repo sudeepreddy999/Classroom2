@@ -1,0 +1,1502 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+      * {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        background-color: rgb(255, 255, 255);
+      }
+      .user-img {
+        width: 50px;
+        border-radius: 100%;
+        border: 1px solid #eee;
+      }
+      .sideBar {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        right: 0;
+        width: 360px;
+        background-color: #ff00004b;
+        transition: all 0.5s ease;
+      }
+      .main-content {
+        width: calc(100% - 360px);
+      }
+      .user {
+        background-color: #000;
+        padding: 1.08rem 0.8rem;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      .user p {
+        color: rgb(255, 255, 255);
+        margin-left: 1rem;
+      }
+      .bold {
+        font-weight: 700;
+      }
+
+      .sideBar button a {
+        color: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 0.8rem;
+      }
+      .sideBar button a i {
+        min-width: 50px;
+        text-align: center;
+        height: 40px;
+        border-radius: 12px;
+        line-height: 40px;
+      }
+      .handraise {
+        width: 100%;
+        color: rgba(127, 126, 126, 0.615);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background-color: #ffffff;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      button {
+        width: 150px;
+        border-radius: 20px;
+        border: 1px solid #ffffff;
+        background-color: #000000;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 8px 25px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: transform 80ms ease-in;
+      }
+      button:hover,
+      button:hover a {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+      }
+      button:active {
+        transform: scale(0.9);
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+        box-sizing: border-box;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        text-rendering: optimizeLegibility;
+        font-size: 14px;
+        -ms-scroll-chaining: none;
+        overscroll-behavior: none;
+      }
+      html:not(input) {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        font-family: sans-serif;
+      }
+      body {
+        color: #000;
+        height: 100%;
+        margin: 0 auto;
+        font-weight: 400;
+        font-size: 14px;
+        width: 100%;
+        -ms-scroll-chaining: none;
+        overscroll-behavior: none;
+      }
+      div[role="button"]:focus {
+        outline: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+        background: #fff;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cfcfcf;
+      }
+      ::-webkit-scrollbar-track {
+        background: #fff;
+      }
+      * {
+        -webkit-touch-callout: none;
+      }
+      @media screen and (max-width: 1024px) {
+        #__next,
+        html {
+          height: 100%;
+        }
+      }
+      .textClamp {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .chevronLeft {
+        background-image: url(https://assetscdn1.paytm.com/movies_new/_next/static/media/chevron_left.0c505418.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        height: 28px;
+        width: 28px;
+        position: relative;
+      }
+      @media screen and (min-width: 1025px) {
+        .foundationInnerDesktop {
+          max-width: 1260px;
+          width: 100%;
+          margin: 0 auto;
+          box-sizing: border-box;
+        }
+      }
+      :root {
+        --vivid-04-strong: #fed533;
+        --background-positive-strong: #21c179;
+        --background-neutral-inverse: #fff;
+        --background-positive-weak: #e3f6ec;
+        --background-neutral-medium: #7e7e7e;
+        --background-offset-weak: #f5f9fe;
+        --background-primary-strong: #00b8f5;
+        --text-positive-strong: #21c179;
+        --text-neutral-variant: #101010;
+        --text-neutral-medium: #7e7e7e;
+        --text-primary-strong: #00b8f5;
+        --text-neutral-inverse: #fff;
+        --text-neutral-weak: #cacaca;
+        --border-neutral-weak: #e0e0e0;
+      }
+      .SeatLayoutSuperContainer,
+      .SeatLayoutSuperContainer .SeatsWrapper ul li {
+        display: flex;
+      }
+      .SeatLayoutSuperContainer {
+        flex-direction: column;
+        overflow: auto;
+        width: 100%;
+        max-width: 1260px;
+        margin: 0 auto;
+        padding-bottom: 34px;
+        flex-grow: 1;
+      }
+      .SeatLayoutSuperContainer::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+      .SeatLayoutSuperContainer .StudentHeading {
+        text-align: center;
+        padding: 34px 0 20px;
+        font-size: 16px;
+        color: #101010;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: -0.08px;
+        letter-spacing: -0.32px;
+        position: relative;
+        width: 100%;
+      }
+      .SeatLayoutSuperContainer .SeatsWrapper {
+        margin: 0 auto;
+      }
+      .SeatLayoutSuperContainer .SeatsWrapper ul li {
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 8px;
+        width: 100%;
+      }
+      .SeatLayoutSuperContainer .SeatsWrapper ul li:last-of-type {
+        margin-bottom: 0;
+      }
+      .SeatLayoutSuperContainer .SeatsWrapper ul li .SeatRowWrapper {
+        display: flex;
+      }
+      .SeatLayoutSuperContainer .SeatsWrapper ul li .SeatRowWrapper span i {
+        padding-top: 10px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .SeatLayoutSuperContainer
+        .SeatsWrapper
+        ul
+        li
+        .SeatRowWrapper
+        span
+        i:before {
+        transition: color 0.2s;
+        color: #00b8f5;
+      }
+      .SeatLayoutSuperContainer .SeatsWrapper ul li .blankSeat {
+        visibility: hidden;
+        width: 31.5px;
+      }
+      .SeatLayoutSuperContainer .SeatsWrapper ul li .AbsentSeat {
+        background: var(--border-neutral-weak);
+        color: var(--text-neutral-weak);
+        border: 1px solid transparent;
+        align-items: center;
+        justify-content: center;
+        cursor: not-allowed;
+      }
+      .SeatLayoutSuperContainer .SeatsWrapper ul li .AbsentSeat:hover {
+        background: hsla(0, 0%, 6%, 0.13);
+        color: var(--text-neutral-weak);
+      }
+      .SeatLayoutSuperContainer .SeatsWrapper ul li span {
+        border: 1.5px solid #00b8f5;
+        flex-shrink: 0;
+        border-radius: 4px;
+        height: 28px;
+        width: 28px;
+        margin-right: 8px;
+        display: block;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 25px;
+        text-align: center;
+        color: var(--text-primary-strong);
+        cursor: pointer;
+        transition: background 0.5s;
+        box-sizing: border-box;
+      }
+      .SeatLayoutSuperContainer .SeatsWrapper ul li span:hover {
+        background: #00b8f5;
+        color: var(--background-neutral-inverse);
+      }
+      .SeatLayoutSuperContainer .SeatsWrapper ul li span i:hover:before {
+        color: #fff;
+      }
+      .FixedSeatingDesktop_layoutCon__HvWWe {
+        display: flex;
+        flex-direction: column;
+        width: 1260px;
+        max-width: 100%;
+      }
+      .SeatWrapper {
+        position: relative;
+      }
+      @-webkit-keyframes FixedSeatingDesktop_easeIn__A1GTT {
+        to {
+          background-color: #00b8f5;
+        }
+      }
+      @keyframes FixedSeatingDesktop_easeIn__A1GTT {
+        to {
+          background-color: #00b8f5;
+        }
+      }
+      .HeadWrapper {
+        flex-shrink: 0;
+        padding-right: 0;
+      }
+      .HeadWrapper .HeadContents {
+        background-color: #6e7c8a;
+        display: flex;
+        color: rgba(0, 0, 0, 0.556);
+        align-items: center;
+        justify-content: center;
+        padding: 8px 0;
+        height: 80px;
+        box-sizing: border-box;
+      }
+      .HeadWrapper .HeadContents > div {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .HeadWrapper .HeadContents > div .ExitClass {
+        position: absolute;
+        left: 0;
+        display: flex;
+        align-items: center;
+      }
+      .HeadWrapper .HeadContents i {
+        flex-shrink: 0;
+        display: block;
+        margin-right: 16px;
+        height: 31px;
+      }
+      .HeadWrapper .HeadContents .SeatLayoutHeaderDesktop_movDetail__qdFzb {
+        overflow: hidden;
+        text-align: center;
+        width: 100%;
+        width: 920px;
+        margin: 0 auto;
+      }
+      .HeadWrapper .HeadContents .SeatLayoutHeaderDesktop_movDetail__qdFzb h2 {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.556);
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: -0.41px;
+      }
+      .HeadWrapper .HeadContents .SeatLayoutHeaderDesktop_movDetail__qdFzb h3 {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.556);
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: -0.08px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      .SeatsWrapper ul li .SeatRowWrapper {
+        justify-content: center;
+        align-items: center;
+      }
+      .SeatsWrapper ul li .SeatRowWrapper .AbsentSeat,
+      .SeatsWrapper ul li .SeatRowWrapper .PeopleAttended {
+        width: 50px;
+        height: 50px;
+        font-size: 15px;
+      }
+      #prof {
+        width: 150px;
+        height: 150px;
+        border-width: 0;
+      }
+      .image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+      }
+      i:hover {
+        cursor: pointer;
+      }
+      h2:hover,
+      h3:hover {
+        cursor: text;
+      }
+      .input-group {
+        position: absolute;
+        right: 8px;
+        width: 25px;
+        height: 40px;
+        background-color: #fff8;
+        box-shadow: 0 0.1rem 0.4rem #0002;
+        padding: 0 0.8rem;
+        border-radius: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s;
+      }
+      .input-group img {
+        width: 1.8rem;
+        height: 1.8rem;
+        cursor: pointer;
+        position: absolute;
+        right: 0px;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 0 0.5rem 0 0.3rem;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        margin-right: 10px;
+      }
+      table {
+        width: 150px;
+        color: black;
+      }
+      table,
+      th,
+      td {
+        border-collapse: collapse;
+        padding: 1rem;
+        height: 40px;
+        text-align: left;
+      }
+
+      thead th {
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color: #d5d1de;
+        cursor: pointer;
+        text-transform: capitalize;
+        display: none;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #0000000b;
+      }
+
+      tbody tr {
+        --delay: 0.1s;
+        transition: 0.5s ease-in-out var(--delay), background-color 0s;
+      }
+
+      tbody tr.hide {
+        opacity: 0;
+        display: none;
+        transform: translateX(100%);
+      }
+      tbody tr.hide .right{
+        display: none;
+      }
+      tbody tr:hover {
+        background-color: #fff6 !important;
+      }
+
+      tbody tr td {
+        transition: 0.2s ease-in-out;
+      }
+
+      tbody tr.hide td {
+        padding: 0;
+        font: 0 / 0 sans-serif;
+        transition: 0.2s ease-in-out 0.5s;
+      }
+      .forTable {
+        display: none;
+        height: 200px;
+        width: 160px;
+        overflow-y: scroll;
+        position: absolute;
+        top: 40px;
+        right: 30px;
+        background-color: white;
+      }
+      .forSearch {
+        position: absolute;
+        top: 10%;
+        right: 0;
+        z-index: 5;
+      }
+      .chatbot {
+        font-family: "Poppins", sans-serif;
+        width: 360px;
+        background: #fff;
+        overflow: hidden;
+        height: 100%;
+        opacity: 1;
+        pointer-events: auto;
+        transform-origin: bottom right;
+        box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+          0 32px 64px -4px rgba(0, 0, 0, 0.5);
+        transition: all 0.1s ease;
+      }
+      .chatbot header {
+        padding: 16px 0;
+        position: relative;
+        text-align: center;
+        color: #fff;
+        height: 70px;
+        background: #000000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      header h2 {
+        font-size: 1.4rem;
+        position: absolute;
+        left: 10px;
+        top: 30%;
+        cursor:default;
+      }
+      .chatbot .chatbox {
+        height: 500px;
+        overflow-y: scroll;
+        padding: 30px 20px 100px;
+      }
+      .chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
+        width: 6px;
+      }
+      .chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
+        background: #fff;
+        border-radius: 25px;
+      }
+      .chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 25px;
+      }
+      .chatbox .chat {
+        display: flex;
+        list-style: none;
+      }
+      .chatbox .outgoing {
+        margin: 20px 0;
+        justify-content: flex-end;
+      }
+      .chatbox .incoming span {
+        width: 32px;
+        height: 32px;
+        color: #fff;
+        cursor: default;
+        text-align: center;
+        line-height: 32px;
+        align-self: flex-end;
+        background: #000000;
+        border-radius: 4px;
+        margin: 0 10px 7px 0;
+      }
+      .chatbox .chat p {
+        font-family: "Poppins", sans-serif;
+        white-space: pre-wrap;
+        padding: 12px 16px;
+        border-radius: 10px 10px 0 10px;
+        max-width: 75%;
+        color: #fff;
+        font-size: 0.95rem;
+        background: #000000;
+      }
+      .chatbox .incoming p {
+        border-radius: 10px 10px 10px 0;
+      }
+      .chatbox .chat p.error {
+        color: #721c24;
+        background: #f8d7da;
+      }
+      .chatbox .incoming p {
+        color: #000;
+        background: #f2f2f2;
+      }
+      .chatbot .chat-input {
+        display: flex;
+        gap: 5px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: #fff;
+        padding: 3px 20px;
+        border-top: 1px solid #ddd;
+      }
+      .chat-input textarea {
+        height: 55px;
+        width: 100%;
+        border: none;
+        outline: none;
+        resize: none;
+        max-height: 180px;
+        padding: 15px 15px 15px 0;
+        font-size: 0.95rem;
+      }
+      .chat-input span {
+        align-self: flex-end;
+        color: #724ae8;
+        cursor: pointer;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        visibility: hidden;
+        font-size: 1.35rem;
+      }
+      .chat-input textarea:valid ~ span {
+        visibility: visible;
+      }
+      .tablink {
+        background-color: #070707;
+        padding: 10px 15px;
+        width: 115px;
+        cursor: pointer;
+      }
+      .tabcontent {
+        display: none;
+      }
+      #everyone {
+        display: block;
+      }
+      .message-content {
+        display: flex;
+        flex-direction: column;
+      }
+      .name-label {
+        font-size: 10px;
+      }
+      .right {
+        flex: 5%;
+        position: absolute;
+        right: 15px ;
+      }
+      .right a {
+        display: block;
+        background-color: rgb(255, 255, 255);
+        list-style-type: none;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        color: rgba(0, 0, 0, 0.556);
+        text-align: center;
+        font-size: 14px;
+        padding: 10px 10px;
+        border-radius: 20px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .right a:hover {
+        transition: 0.5s;
+        background-color: rgba(0, 0, 0, 0.556);
+        color: rgb(255, 255, 255);
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        right: 0;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 100px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: rgba(0, 0, 0, 0.556);
+        padding: 12px 10px;
+        text-decoration: none;
+        border-radius: 0;
+        display: block;
+      }
+      .dropdown-content a:hover {
+        background-color: rgba(0, 0, 0, 0.556);
+        color: white;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sideBar">
+      <div class="user" id="user">
+        <img src="{{ request.user.profilepic.url }}" alt="me" class="user-img" />
+        <div>
+          <p class="bold">{{request.user.first_name}} {{request.user.last_name}}</p>
+          <p>{{request.user.enrollment}}</p>
+        </div>
+      </div>
+      <div class="handraise" id="handraise">
+        <button style="padding-left: 10px; padding-right: 10px">
+          <a href="#">
+            <i class="fa fa-hand-o-up" style="font-size: x-large"></i>
+            <span class="nav-item">Raise Hand</span>
+          </a>
+        </button>
+      </div>
+      <div id="chatbot">
+        <div class="chatbot">
+          <header>
+            <h2>Chatbox</h2>
+            <div class="right">
+              <div class="dropdown">
+                <a id="chatWith">With Everyone</a>
+                <div class="dropdown-content">
+                  <a onclick="openTab('everyone')">Everyone</a>
+                  <a onclick="openTab('teacher')">Teacher</a>
+                  <a onclick="openTab('anonymous')">Anonymous</a>
+                </div>
+              </div>
+            </div>
+          </header>
+          <div id="everyone" class="tabcontent">
+            <ul class="chatbox">
+              <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <div class="message-content">
+                  <p>Hi there 👋<br />Your messages appears to everyone.</p>
+                  <pre class="name-label">System Generated</pre>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="teacher" class="tabcontent">
+            <ul class="chatbox">
+              <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <div class="message-content">
+                  <p>Hello, you can message seperately to Teacher.</p>
+                  <pre class="name-label">System Generated</pre>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="anonymous" class="tabcontent">
+            <ul class="chatbox">
+              <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <div class="message-content">
+                  <p>You can send the messages as an Anonymous person.</p>
+                  <pre class="name-label">System Generated</pre>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="chat-input">
+            <textarea
+              placeholder="Enter a message..."
+              spellcheck="false"
+              required
+            ></textarea>
+            <span id="send-btn" class="material-symbols-rounded">send</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="container">
+        <div class="ClassWrapper">
+          <div class="HeadWrapper" id="headwrap">
+            <div class="HeadContents">
+              <div class="foundationInnerDesktop">
+                <div class="ExitClass">
+                  <i class="chevronLeft"></i>
+                </div>
+                <div class="SeatLayoutHeaderDesktop_movDetail__qdFzb">
+                  <h2 class="textClamp">{{course.code}}</h2>
+                  <h3>{{room.end_datetime.date}}  at GB-104</h3> <!-- {{room.end_datetime.date}}-->
+                </div>
+                <div class="forSearch">
+                  <div class="input-group">
+                    <input
+                      type="search"
+                      id="search-input"
+                      placeholder="Search Data..."
+                    />
+                    <img id="search" src="imgs/search.png" alt="" />
+                  </div>
+                  <div class="forTable">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>
+                            Enrollment <span class="icon-arrow">&UpArrow;</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="22114080" style="display: none;">22114080</td>
+                          <td>
+                            <div class="right 22114080">
+                              <div class="dropdown">
+                                <a style="position: absolute;color: black; top: -35px; left: -135px;font-size: 18px;" id="chatWith">22114080</a>
+                                <div class="dropdown-content" style="position: absolute; right: 0px;width: 80px;">
+                                  <a onclick="Overide('22114080')">Overide</a>
+                                  <a onclick="Kick('22114080')">Kick</a>
+                                  <a onclick="Hii('22114080')">Hii</a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="22114081" style="display: none;">22114081</td>
+                          <td>
+                            <div class="right 22114081">
+                              <div class="dropdown">
+                                <a style="position: absolute;color: black; top: -35px; left: -135px;font-size: 18px;" id="chatWith">22114081</a>
+                                <div class="dropdown-content" style="position: absolute; right: 0px;width: 80px;">
+                                  <a onclick="Overide('22114081')">Overide</a>
+                                  <a onclick="Kick('22114081')">Kick</a>
+                                  <a onclick="Hii('22114081')">Hii</a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="22114082" style="display: none;">22114082</td>
+                          <td>
+                            <div class="right 22114082">
+                              <div class="dropdown">
+                                <a style="position: absolute;color: black; top: -35px; left: -135px;font-size: 18px;" id="chatWith">22114082</a>
+                                <div class="dropdown-content" style="position: absolute; right: 0px;width: 80px;">
+                                  <a onclick="Overide('22114082')">Overide</a>
+                                  <a onclick="Kick('22114082')">Kick</a>
+                                  <a onclick="Hii('22114082')">Hii</a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="22114083" style="display: none;">22114083</td>
+                          <td>
+                            <div class="right 22114083">
+                              <div class="dropdown">
+                                <a style="position: absolute;color: black; top: -35px; left: -135px;font-size: 18px;" id="chatWith">22114083</a>
+                                <div class="dropdown-content" style="position: absolute; right: 0px;width: 80px;">
+                                  <a onclick="Overide('22114083')">Overide</a>
+                                  <a onclick="Kick('22114083')">Kick</a>
+                                  <a onclick="Hii('22114083')">Hii</a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="22114084" style="display: none;">22114084</td>
+                          <td>
+                            <div class="right 22114084">
+                              <div class="dropdown">
+                                <a style="position: absolute;color: black; top: -35px; left: -135px;font-size: 18px;" id="chatWith">22114084</a>
+                                <div class="dropdown-content" style="position: absolute; right: 0px;width: 80px;">
+                                  <a onclick="Overide('22114084')">Overide</a>
+                                  <a onclick="Kick('22114084')">Kick</a>
+                                  <a onclick="Hii('22114084')">Hii</a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="22114085" style="display: none;">22114085</td>
+                          <td>
+                            <div class="right 22114085">
+                              <div class="dropdown">
+                                <a style="position: absolute;color: black; top: -35px; left: -135px;font-size: 18px;" id="chatWith">22114085</a>
+                                <div class="dropdown-content" style="position: absolute; right: 0px;width: 80px;">
+                                  <a onclick="Overide('22114085')">Overide</a>
+                                  <a onclick="Kick('22114085')">Kick</a>
+                                  <a onclick="Hii('22114085')">Hii</a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="22114086" style="display: none;">22114086</td>
+                          <td>
+                            <div class="right 22114086">
+                              <div class="dropdown">
+                                <a style="position: absolute;color: black; top: -35px; left: -135px;font-size: 18px;" id="chatWith">22114086</a>
+                                <div class="dropdown-content" style="position: absolute; right: 0px;width: 80px;">
+                                  <a onclick="Overide('22114086')">Overide</a>
+                                  <a onclick="Kick('22114086')">Kick</a>
+                                  <a onclick="Hii('22114086')">Hii</a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="22114087" style="display: none;">22114087</td>
+                          <td>
+                            <div class="right 22114087">
+                              <div class="dropdown">
+                                <a style="position: absolute;color: black; top: -35px; left: -135px;font-size: 18px;" id="chatWith">22114087</a>
+                                <div class="dropdown-content" style="position: absolute; right: 0px;width: 80px;">
+                                  <a onclick="Overide('22114087')">Overide</a>
+                                  <a onclick="Kick('22114087')">Kick</a>
+                                  <a onclick="Hii('22114087')">Hii</a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="22114088" style="display: none;">22114088</td>
+                          <td>
+                            <div class="right 22114088">
+                              <div class="dropdown">
+                                <a style="position: absolute;color: black; top: -35px; left: -135px;font-size: 18px;" id="chatWith">22114088</a>
+                                <div class="dropdown-content" style="position: absolute; right: 0px;width: 80px;">
+                                  <a onclick="Overide('22114088')">Overide</a>
+                                  <a onclick="Kick('22114088')">Kick</a>
+                                  <a onclick="Hii('22114088')">Hii</a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="22114089" style="display: none;">22114089</td>
+                          <td>
+                            <div class="right 22114089">
+                              <div class="dropdown">
+                                <a style="position: absolute;color: black; top: -35px; left: -135px;font-size: 18px;" id="chatWith">22114089</a>
+                                <div class="dropdown-content" style="position: absolute; right: 0px;width: 80px;">
+                                  <a onclick="Overide('22114089')">Overide</a>
+                                  <a onclick="Kick('22114089')">Kick</a>
+                                  <a onclick="Hii('22114089')">Hii</a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="PeopleAttended" style="position: absolute; top: 85px;right: 380px;font-family: monospace;">People Attended:<span style="font-family: monospace;">80</span>/{{max}}</div>
+          <div class="SeatLayoutSuperContainer">
+            <div class="FixedSeatingDesktop_layoutCon__HvWWe">
+              <div class="SeatsWrapper">
+                <ul>
+                  <li>
+                    <div class="SeatRowWrapper">
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <div class="SeatWrapper">
+                        <span id="prof" class="PeopleAttended"
+                          ><img
+                            src="imgs/prof.png"
+                            alt="Admin Icon"
+                            class="image"
+                        /></span>
+                      </div>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="SeatRowWrapper">
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="SeatRowWrapper">
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="SeatRowWrapper">
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <div class="StudentHeading">STUDENTS</div>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="SeatRowWrapper">
+                      <span class="blankSeat"></span>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">1</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">2</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">3</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">4</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">5</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">6</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">7</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">8</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">9</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">10</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">11</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">12</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">13</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">14</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="AbsentSeat" data-seat="1">15</span>
+                      </div>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="SeatRowWrapper">
+                      <span class="blankSeat"></span>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">1</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">2</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">3</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">4</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">5</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">6</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">7</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">8</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">9</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">10</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">11</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">12</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">13</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">14</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">15</span>
+                      </div>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="SeatRowWrapper">
+                      <span class="blankSeat"></span>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">1</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">2</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">3</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">4</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">5</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">6</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">7</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">8</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">9</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">10</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">11</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">12</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">13</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">14</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">15</span>
+                      </div>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="SeatRowWrapper">
+                      <span class="blankSeat"></span>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">1</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">2</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">3</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">4</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">5</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">6</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">7</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">8</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">9</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">10</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">11</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">12</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">13</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">14</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">15</span>
+                      </div>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="SeatRowWrapper">
+                      <span class="blankSeat"></span>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">1</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">2</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">3</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">4</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">5</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">6</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">7</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">8</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">9</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">10</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">11</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">12</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">13</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">14</span>
+                      </div>
+                      <div class="SeatWrapper">
+                        <span class="PeopleAttended">15</span>
+                      </div>
+                      <span class="blankSeat"></span>
+                      <span class="blankSeat"></span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var searchInput = document.getElementById("search-input");
+        var inpgrp = document.getElementsByClassName("input-group")[0];
+        var table = document.querySelector(".forTable");
+        searchInput.addEventListener("mouseleave", function (event) {
+          if(searchInput.value.length>0){
+            table.style.display = "inline-block";
+            inpgrp.style.width="200px";
+          }
+          else{
+          table.style.display = "none";
+          inpgrp.style.width="25px";
+          }
+        });
+        inpgrp.addEventListener("mouseenter", function (event) {
+          table.style.display = "inline-block";
+          inpgrp.style.width="200px";
+        });
+      });
+      const search = document.querySelector(".input-group input"),
+        table_rows = document.querySelectorAll("tbody tr"),
+        table_headings = document.querySelectorAll("thead th");
+      search.addEventListener("input", searchTable);
+
+      function searchTable() {
+        table_rows.forEach((row, i) => {
+          let table_data = row.textContent.toLowerCase(),
+            search_data = search.value.toLowerCase();
+
+          row.classList.toggle("hide", table_data.indexOf(search_data) < 0);
+          row.style.setProperty("--delay", i / 25 + "s");
+        });
+
+        document
+          .querySelectorAll("tbody tr:not(.hide)")
+          .forEach((visible_row, i) => {
+            visible_row.style.backgroundColor =
+              i % 2 == 0 ? "transparent" : "#0000000b";
+          });
+      }
+      function setHeights(){
+        var user = document.getElementById("user");
+        var headwrap = document.getElementById("headwrap");
+        var handraise = document.getElementById("handraise");
+        var chatbot = document.getElementById("chatbot");
+        var userHeight = headwrap.offsetHeight;
+        var handraiseHeight = handraise.offsetHeight;
+        var heighto = window.innerHeight;
+        var finalHeight = heighto - userHeight - handraiseHeight;
+        var newHeight = finalHeight + "px";
+        headwrap.style.height = userHeight + "px";
+        chatbot.style.height = newHeight;
+      }
+      setHeights();
+      window.addEventListener('resize', setHeights);
+     
+      let i=0;
+      function openTab(tabName) {
+        var tabcontent;
+        var chatWith = document.getElementById('chatWith');
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+        if(tabName=='everyone'){
+          i=0;
+          chatWith.innerHTML='With Everyone';
+        }
+        if(tabName=='teacher'){
+          i=1;
+          chatWith.innerHTML='With Teacher';
+        }
+        if(tabName=='anonymous'){
+          i=2;
+          chatWith.innerHTML='As Anonymous';
+        }
+      }
+      var chatbox=[];
+      chatbox = document.getElementsByClassName("chatbox");
+      const chatInput = document.querySelector(".chat-input textarea");
+      const sendChatBtn = document.querySelector(".chat-input span");
+
+      let userMessage = null;
+      const API_KEY = "PASTE-YOUR-API-KEY";
+      const inputInitHeight = chatInput.scrollHeight;
+
+      const createChatLi = (message, className) => {
+        const chatLi = document.createElement("li");
+        chatLi.classList.add("chat", `${className}`);
+        let chatContent =
+          className === "outgoing"
+            ? `<p></p>`
+            : `<span class="material-symbols-outlined">smart_toy</span><div class="message-content"><p></p><pre class="name-label">System Generated</pre></div>`;
+        chatLi.innerHTML = chatContent;
+        chatLi.querySelector("p").textContent = message;
+        return chatLi;
+      };
+
+      const generateResponse = (chatElement) => {
+        const API_URL = "https://api.openai.com/v1/chat/completions";
+        const messageElement = chatElement.querySelector("p");
+        const requestOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${API_KEY}`,
+          },
+          body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: userMessage }],
+          }),
+        };
+        fetch(API_URL, requestOptions)
+          .then((res) => res.json())
+          .then((data) => {
+            messageElement.textContent = data.choices[0].message.content.trim();
+          })
+          .catch(() => {
+            messageElement.classList.add("error");
+            messageElement.textContent =
+              "Oops! Something went wrong. Please try again.";
+          })
+          .finally(() => chatbox[i].scrollTo(0, chatbox[i].scrollHeight));
+      };
+
+      const handleChat = () => {
+        userMessage = chatInput.value.trim();
+        if (!userMessage) return;
+        chatInput.value = "";
+        chatInput.style.height = `${inputInitHeight}px`;
+        chatbox[i].appendChild(createChatLi(userMessage, "outgoing"));
+        chatbox[i].scrollTo(0, chatbox[i].scrollHeight);
+
+        setTimeout(() => {
+          const incomingChatLi = createChatLi("Thinking...", "incoming");
+          chatbox[i].appendChild(incomingChatLi);
+          chatbox[i].scrollTo(0, chatbox[i].scrollHeight);
+          generateResponse(incomingChatLi);
+        }, 600);
+      };
+
+      chatInput.addEventListener("input", () => {
+        chatInput.style.height = `${inputInitHeight}px`;
+        chatInput.style.height = `${chatInput.scrollHeight}px`;
+      });
+
+      chatInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault();
+          handleChat();
+        }
+      });
+
+      sendChatBtn.addEventListener("click", handleChat);
+    </script>
+  </body>
+</html>
